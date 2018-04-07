@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/02 13:01:47 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/02 13:07:22 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/06 22:38:48 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/07 06:19:53 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+int		max(int* tab, unsigned int len)
 {
-	int temp;
+	int i;
+	int j;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	i = 0;
+	j = 0;
+	while (i <= len)
+	{
+		while (tab[i] >= tab[j] && tab[j] >= tab[i])
+		{
+			if (tab[i] >= tab[j] && tab[j] >= tab[i])
+			{
+				return (tab[i]);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int		main(void)
+{
+	int *i;
+
+	i = max("12", 2);
+	printf("%d", max("12", 2));
 }

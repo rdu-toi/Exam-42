@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/30 13:31:39 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/03/30 14:05:39 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/02 15:33:07 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/02 16:00:23 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,24 @@ int		main(int argc, char **argv)
 {
 	int i;
 	int j;
-	int k;
+	int up;
+	int dn;
 
 	i = 0;
-	while (argc == 2)
+	if (argc == 2)
 	{
 		while (argv[1][i] != '\0')
 		{
-			j = argv[1][i] + 13;
-			k = argv[1][i] - 13;
-			if (j >= 'a' || j <= 'm' || j >= 'A' || j <= 'M')
+			j = argv[1][i];
+			if ((j >= 'a' && j <= 'm') || (j >= 'A' && j <= 'M'))
 			{
-				write(1, &j, 1);
+				up = argv[1][i] + 13;
+				write(1, &up, 1);
 			}
-			else if (j >= 'n' || j <= 'z' || j >= 'N' || j <= 'Z')
+			else if ((j >= 'n' && j <= 'z') || (j >= 'N' && j <= 'Z'))
 			{
-				write(1, &k, 1);
+				dn = argv[1][i] - 13;
+				write(1, &dn, 1);
 			}
 			else
 			{

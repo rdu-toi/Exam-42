@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   strcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/02 13:01:47 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/02 13:07:22 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/05 16:12:20 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/05 18:16:52 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+int		ft_strcmp(char *s1, char *s2)
 {
-	int temp;
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+int 	main(void)
+{
+	printf("%d", ft_strcmp("\0", "\200"));
+	printf("\n%d", strcmp("\0", "\200"));
 }

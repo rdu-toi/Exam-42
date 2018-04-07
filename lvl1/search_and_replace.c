@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   search_and_replace.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/02 13:01:47 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/02 13:07:22 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/03 11:40:44 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/03 14:18:01 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int temp;
+#include <unistd.h>
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+int		main(int argc, char**argv)
+{
+	int i;
+
+	i = 0;
+	if (argc == 4)
+	{
+		while (argv[1][i] != '\0')
+		{
+			if (argv[1][i] == argv[2][0])
+			{
+				write(1, &argv[3][0], 1);
+			}
+			else
+			{
+				write(1, &argv[1][i], 1);
+			}
+			i++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
 }

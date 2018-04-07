@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/02 13:01:47 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/02 13:07:22 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/07 06:22:31 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/07 06:33:22 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int temp;
+#include <unistd.h>
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+int		main(int argc, char **argv)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (argc == 3 && argv[1][i] != '\0'&& argv[2][j])
+	{
+		while (argv[1][i] != '\0' && argv[2][j] != '\0')
+		{
+			if(argv[1][i] == argv[2][j])
+			{
+				write(1, &argv[1][i], 1);
+				break;
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	write(1, "\n", 1);
+	return (0);
 }

@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   is_power_of_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/02 13:01:47 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/02 13:07:22 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/06 11:51:06 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/06 17:11:47 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+int		is_power_of_2(unsigned int n)
 {
-	int temp;
+	int i;
+	int j;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	i = 1;
+	while (i)
+	{
+		j = i * i;
+		if (j == n)
+		{
+			return (1);
+		}
+		else if (j > n)
+		{
+			return (0);
+		}
+		i++;
+	}
+}
+
+int		main(void)
+{
+	printf("%d", is_power_of_2(25));
 }

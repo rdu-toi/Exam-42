@@ -5,24 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/29 22:13:52 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/03/30 09:34:58 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/02 12:49:19 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/02 12:56:40 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 char	*ft_strcpy(char *s1, char *s2)
 {
 	int i;
 
 	i = 0;
-	s1 = (char*)malloc(sizeof(*s2));
-	while(s2[i] != '\0')
+	while (s2[i] != '\0')
 	{
 		s1[i] = s2[i];
 		i++;
 	}
-	s1[i] = '\0';
 	return (s1);
 }
