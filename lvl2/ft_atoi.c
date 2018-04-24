@@ -5,42 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/03 15:31:48 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/07 06:04:31 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/23 03:44:27 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/23 12:51:25 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int j;
-	int k;
+	int		i;
+	int		sign;
+	int		ints;
 
-	i = 1;
-	k = 1;
-	
-	while (str[i] == ' ' && str[i] == '\t')
+	i = 0;
+	sign = 1;
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
+	if (str[i] == '-')
 	{
+		sign = -1;
 		i++;
 	}
-	if (!((str[i] >= 0 && str[i] <= 9) || (str[i] == '-') || (str[i] == '+')))
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		return (0);
-	}
-	if (str[0] != '\0' && str[0] == '-')
-	{
-		k = -1;
-	}
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
-	{
-		j = (j * 10) + (str[i] - '0');
+		ints = (ints * 10) + (str[i] - '0');
 		i++;
 	}
-	return (j * k);
+	return (ints * sign);
 }
 
 int		main(void)
 {
-	printf("%d", ft_atoi("  123"));
-	printf("\n%d", atoi("  +123"));
+	printf("%d", ft_atoi(""));
 }

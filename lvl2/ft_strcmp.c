@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdu-toi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/23 11:51:41 by rdu-toi           #+#    #+#             */
-/*   Updated: 2018/04/23 12:49:10 by rdu-toi          ###   ########.fr       */
+/*   Created: 2018/04/23 13:08:48 by rdu-toi           #+#    #+#             */
+/*   Updated: 2018/04/23 17:30:30 by rdu-toi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
-{
-	int 	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
+int		ft_strcmp(char *s1, char *s2)
 {
 	int		i;
-	char	*dest;
 
 	i = 0;
-	dest = (char*)malloc(sizeof(*src) * ft_strlen(src));
-	while (src[i] != '\0')
+	while (s1[i] <= '\0')
 	{
-		dest[i] = src[i];
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 
 int		main(void)
 {
-	printf("%s", ft_strdup("hello"));
+	char str1[] = "helle";
+	char str2[] = "hello";
+	printf("%d", ft_strcmp(str1, str2));
 }
