@@ -37,7 +37,7 @@ int		search1(char *str, int i)
 	{
 		if (str[i] == str[j] && j < i)
 			return (0);
-		i++;
+		j++;
 	}
 	return (1);
 }
@@ -51,7 +51,7 @@ int		main(int argc, char *argv[])
 	{
 		while (argv[1][i] != '\0')
 		{
-			if (search1(argv[1], i) == 1 && search2(argv[1], argv[2], i) == 1)
+			if ((search1(argv[1], i) == 1) && (search2(argv[1], argv[2], i) == 1))
 				write(1, &argv[1][i], 1);
 			i++;
 		}

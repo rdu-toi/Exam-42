@@ -23,6 +23,7 @@ int		main(int argc, char **argv)
 		{
 			i++;
 		}
+		i = i - 1;
 		while (i >= 0)
 		{
 			write(1, &argv[1][i], 1);
