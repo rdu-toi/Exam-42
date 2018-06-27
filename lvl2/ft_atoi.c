@@ -18,24 +18,18 @@ int		ft_atoi(const char *str)
 
 	i = 0;
 	sign = 1;
-	while (str[i] == ' ' || str[i] == '\t')
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		ints = (ints * 10) + (str[i] - '0');
 		i++;
 	}
 	return (ints * sign);
-}
-
-int		main(void)
-{
-	printf("%d", ft_atoi(""));
 }
